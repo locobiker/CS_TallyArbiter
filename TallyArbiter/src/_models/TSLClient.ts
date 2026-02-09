@@ -1,10 +1,14 @@
-export interface TSLClient {
-    connected: boolean;
-    ip: string;
-    id: string;
-    port: number | string;
-    transport: string;
-    socket?: any;
+import { TSLClientProtocolOptions } from './ConfigTSLClient'
 
-    error?: boolean;
+export interface TSLClient {
+	connected: boolean
+	ip: string
+	id: string
+	port: number | string
+	transport: string
+	protocol?: string
+	protocolOptions: TSLClientProtocolOptions
+	socket?: any
+
+	error?: boolean
 }
