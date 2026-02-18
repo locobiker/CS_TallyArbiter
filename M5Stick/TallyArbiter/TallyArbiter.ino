@@ -613,7 +613,7 @@ void socket_event(socketIOmessageType_t type, uint8_t *payload, size_t length) {
 String getBusTypeById(const String& busId) {
   for (int i = 0; i < BusOptions.length(); i++) {
     if (JSON.stringify(BusOptions[i]["id"]) == busId) {
-      return JSON.stringify(BusOptions[i]["type"]);
+      return strip_quot(JSON.stringify(BusOptions[i]["type"]));
     }
   }
   return "invalid";
@@ -622,7 +622,7 @@ String getBusTypeById(const String& busId) {
 String getBusColorById(const String& busId) {
   for (int i = 0; i < BusOptions.length(); i++) {
     if (JSON.stringify(BusOptions[i]["id"]) == busId) {
-      return JSON.stringify(BusOptions[i]["color"]);
+      return strip_quot(JSON.stringify(BusOptions[i]["color"]));
     }
   }
   return "invalid";
